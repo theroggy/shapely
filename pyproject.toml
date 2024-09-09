@@ -81,9 +81,11 @@ omit = ["shapely/tests/*"]
 
 [tool.ruff]
 line-length = 88
-extend-exclude = ["docs/*", "benchmarks/*", "shapely/_version.py"]
+extend-exclude = ["docs/*", "benchmarks/*", "shapely/_version.py", "versioneer.py", "setup.py"]
 
 [tool.ruff.lint]
+pycodestyle.max-doc-length = 80
+
 select = [
     # pyflakes
     "F",
