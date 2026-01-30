@@ -670,6 +670,8 @@ class BaseGeometry(shapely.Geometry):
 
         Refer to `shapely.difference` for full documentation.
         """
+        if grid_size is None and shapely.lib.is_valid_input_scalar(other):
+            return shapely.lib.difference_scalar(self, other)
         return shapely.difference(self, other, grid_size=grid_size)
 
     # Note: future plan is to change this signature over a few releases:
@@ -686,6 +688,8 @@ class BaseGeometry(shapely.Geometry):
 
         Refer to `shapely.intersection` for full documentation.
         """
+        if grid_size is None and shapely.lib.is_valid_input_scalar(other):
+            return shapely.lib.intersection_scalar(self, other)
         return shapely.intersection(self, other, grid_size=grid_size)
 
     # Note: future plan is to change this signature over a few releases:
@@ -702,6 +706,8 @@ class BaseGeometry(shapely.Geometry):
 
         Refer to `shapely.symmetric_difference` for full documentation.
         """
+        if grid_size is None and shapely.lib.is_valid_input_scalar(other):
+            return shapely.lib.symmetric_difference_scalar(self, other)
         return shapely.symmetric_difference(self, other, grid_size=grid_size)
 
     # Note: future plan is to change this signature over a few releases:
@@ -718,6 +724,8 @@ class BaseGeometry(shapely.Geometry):
 
         Refer to `shapely.union` for full documentation.
         """
+        if grid_size is None and shapely.lib.is_valid_input_scalar(other):
+            return shapely.lib.union_scalar(self, other)
         return shapely.union(self, other, grid_size=grid_size)
 
     # Unary predicates
